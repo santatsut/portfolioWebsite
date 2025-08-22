@@ -2,70 +2,108 @@
 </script>
 
 <template>
-  <div id="background">
-    <div id="outerCircle">
-      <div id="innerCircle"></div>
-    </div>
-  </div>
-  <div id="leftSection">
-    <div id="homeMain">
-      <div id="titleText">
-        <h1>Student 18</h1>
-        <h1>Web Developer</h1>
-        <h5 id="proText">Website Projects</h5>
-      </div>
-      <div id="squares4">
-        <div class="bentoBox">
-          <h3>ArtStudy</h3>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat minus sunt distinctio accusamus explicabo. Sint vel consequuntur fugiat fuga eos.</h5>
-        </div>
-        <div class="bentoBox">
-          <h3>budo club</h3>
-          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat minus sunt distinctio accusamus explicabo. Sint vel consequuntur fugiat fuga eos.</h5>
-        </div>
-        <div class="bentoBox">
-          <h3>Project in progress...</h3>
-        </div>
-        <div class="bentoBox">
-          <h3>Project in progress...</h3>
+  <div>
+    <!-- Top Section -->
+    <div id="topSection">
+      <div id="background">
+        <div id="outerCircle">
+          <div id="innerCircle"></div>
         </div>
       </div>
-      <button class="bentoBox" id="designTemplates">
-        <h3>Website Design Templates</h3>
-        <div id="arrowDown"></div>
-      </button>
+      <!-- Flex container for left + right -->
+      <div id="topContent">
+        <div id="leftSection">
+          <div id="homeMain">
+            <div id="titleText">
+              <h1>Student 18</h1>
+              <h1>Web Developer</h1>
+              <h5 id="proText">Website Projects</h5>
+            </div>
+            <div id="squares4">
+              <div class="bentoBox">
+                <h3>ArtStudy</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat minus sunt distinctio accusamus explicabo. Sint vel consequuntur fugiat fuga eos.</h5>
+              </div>
+              <div class="bentoBox">
+                <h3>budo club</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat minus sunt distinctio accusamus explicabo. Sint vel consequuntur fugiat fuga eos.</h5>
+              </div>
+              <div class="bentoBox">
+                <h3>Project in progress...</h3>
+              </div>
+              <div class="bentoBox">
+                <h3>Project in progress...</h3>
+              </div>
+              <button class="bentoBox" id="designTemplates">
+                <h3>Website Design Templates</h3>
+                <div id="arrowDown"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      <div id="rightSection">
+          <div class="bentoBox" id="skillBox">
+            <h3>Skills</h3>
+            <ul class="skillsList">
+              <li>Teamwork</li>
+              <li>Communication</li>
+              <li>Problemsolving</li>
+            </ul>
+            <h3>Programming Languages</h3>
+            <ul class="skillsList">
+              <li>React</li>
+              <li>Javascript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+          <div class="bentoBox" id="shortText">
+            <h3>Web Developer</h3>
+            <p>Web developer with a passion for creating dynamic and responsive websites. Skilled in HTML, CSS, and JavaScript, with a focus on user experience and accessibility. Eager to contribute to innovative projects and collaborate with teams to deliver high-quality web solutions.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div id="rightSection">
-    <div class="bentoBox" id="skillBox">
-      <h3>Skills</h3>
-      <ul class="skillsList">
-        <li>Teamwork</li>
-        <li>Communication</li>
-        <li>Problemsolving</li>
-      </ul>
-      <h3>Programming Languages</h3>
-      <ul class="skillsList">
-        <li>React</li>
-        <li>Javascript</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-    </div>
-    <div class="bentoBox" id="shortText">
-      <h3>Web Developer</h3>
-      <p>Web developer with a passion for creating dynamic and responsive websites. Skilled in HTML, CSS, and JavaScript, with a focus on user experience and accessibility. Eager to contribute to innovative projects and collaborate with teams to deliver high-quality web solutions.</p>
+
+    <!-- Lower Section -->
+    <div id="lowerSection">
+      <h2>Templates</h2>
+      <div id="templateArea">
+        <div class="templateBox"></div>
+        <div class="templateBox"></div>
+        <div class="templateBox"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
 
+#topSection {
+  position: relative;
+  width: 100%;
+}
+
+#topContent {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+#lowerSection {
+  width: 100%;
+  margin: 50px;
+  height: 800px;
+  background-color: #33043C;
+  
+}
+
 #background {
   position: absolute;
   margin-left: 23%;
   width: 50%;
-  height: 100vh;
 }
 
 #outerCircle {
@@ -94,9 +132,10 @@
 #squares4 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  column-gap: 60px;
+  grid-auto-rows: 225px;
+  column-gap: 50px;
   row-gap: 30px;
-  max-width: 600px;
+  width: 500px;
   margin: 0px;
   padding: 0px;
 }
@@ -106,9 +145,6 @@
   flex-direction: column;
   background-color: black;
   color: #F0F0F0;
-  width: 225px;
-  height: 225px;
-  padding: 25px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -121,6 +157,7 @@
 .bentoBox h5 {
   font-family: 'Times New Roman', Times, serif;
   font-size: small;
+  margin: 25px;
 }
 
 #designTemplates {
@@ -131,9 +168,10 @@
   margin-top: 30px;
   border: none;
   font-size: 20px;
-  letter-spacing:0.3cap;
+  letter-spacing: 0.3cap;
   font-weight: 300;
   padding: 10px;
+  grid-column: 1 / -1;
 }
 
 #arrowDown {
@@ -155,24 +193,32 @@ h1 {
 #proText {
   color: black;
   margin: 25px 0 10px 0;
-
 }
 
 #rightSection {
   display: flex;
-  position: relative;
   flex-direction: column;
   align-items: center;
   width: 40%;
-  height: 100vh;
-  margin-left: 75px;
+  margin-left: 300px;
 }
 
 #skillBox {
   position: relative;
-  width: 65%;
-  height: 60vh;
+  width: 100%;
+  height: 50vh;
   margin: 25px;
+}
+
+#skillSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  position: relative;
+  margin-top: 50px;
+  list-style: none;
+  column-gap: 50px;
+  row-gap: 30px;
+  max-width: 400px;
 }
 
 #skillBox h3 {
@@ -196,12 +242,10 @@ h1 {
   text-align: left;
 }
 
-
 #shortText {
   position: relative;
-  width: 65%;
-  height: 25vh;
+  width: 100%;
   margin: 25px;
+  height: 275px;
 }
-
 </style>

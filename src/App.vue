@@ -15,6 +15,10 @@ import HomeView from './views/HomeView.vue';
 <style scoped>
 #main {
   display: flex;
+<<<<<<< HEAD
   flex-direction: row;
+=======
+  width: 100%;
+>>>>>>> 189c8336d96f3aa53ffa810a6908b7cfe7be3289
 }
 </style>
