@@ -27,6 +27,9 @@
     width: 300px;
     height: 100vh;
     align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.8);
 }
 
 #topRectangle {
