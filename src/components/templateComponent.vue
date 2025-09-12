@@ -69,7 +69,7 @@ onMounted(() => {
             allowfullscreen></iframe>
           -->
         </div>
-      </div>
+    </div>
   
 </template>
 
@@ -80,6 +80,8 @@ onMounted(() => {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  overflow: auto;
+  position: relative;
 }
 
 #templateTitle {
@@ -92,15 +94,18 @@ onMounted(() => {
   padding: 0;
   width: 50%;
   font-size: 62px;
+  color: #F0F0F0;
 }
 
 #templateArea {
   display: flex;
   gap: 20px;
   width: 80vw;
+  height: 100%;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 50px 0;
 }
 
 .templateBox {

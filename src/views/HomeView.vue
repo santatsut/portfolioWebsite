@@ -5,14 +5,17 @@ import { onMounted, ref } from 'vue';
 
 
 <template>
-  <div>
+  <div id="body">
     <!-- Top Section -->
     <div id="topSection">
+      <!-- Background Circles -->
+       <!--
       <div id="background">
         <div id="outerCircle">
           <div id="innerCircle"></div>
         </div>
       </div>
+      -->
       <!-- Flex container for left + right -->
       <div id="topContent">
         <div id="leftSection">
@@ -68,28 +71,48 @@ import { onMounted, ref } from 'vue';
         </div>
       </div>
     </div>
-    </div> 
-
-    <!-- Lower Section -->
-    
+  </div> 
 
 </template>
 
 <style>
 
+#body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #topSection {
   position: relative;
   width: 100%;
+  height: 100vh;
 }
+
 
 #topContent {
   display: flex;
   align-items: flex-start;
   position: relative;
   width: 100%;
+  margin-top: 25px;
 }
 
+#titleText h1 {
+  color: #F0F0F0;
+}
 
+#titleText h5 {
+  color: #F0F0F0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  margin-top: 10px;
+}
 
 #background {
   position: absolute;
@@ -103,17 +126,20 @@ import { onMounted, ref } from 'vue';
   height: 800px;
   background: linear-gradient(0.4turn, #B531E2, #33043C 50%);
   border-radius: 50%;
-  z-index: -5;
+  z-index: 0;
+  box-shadow: 0 0px 100px rgb(255, 255, 255);
 }
 
 #innerCircle {
   position: absolute;
   width: 640px;
   height: 640px;
-  background: #F0F0F0;
+  background-color: #F0F0F0;
   border-radius: 50%;
   justify-self: center;
   margin-top: 80px;
+  box-shadow: inset 20px 0px 100px #4b125e;
+
 }
 
 #homeMain {
@@ -139,6 +165,8 @@ import { onMounted, ref } from 'vue';
   text-align: center;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgb(255, 255, 255);
 }
 
 .bentoBox h3 {
