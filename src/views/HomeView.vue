@@ -8,14 +8,6 @@ import { onMounted, ref } from 'vue';
   <div id="body">
     <!-- Top Section -->
     <div id="topSection">
-      <!-- Background Circles -->
-       <!--
-      <div id="background">
-        <div id="outerCircle">
-          <div id="innerCircle"></div>
-        </div>
-      </div>
-      -->
       <!-- Flex container for left + right -->
       <div id="topContent">
         <div id="leftSection">
@@ -94,7 +86,6 @@ import { onMounted, ref } from 'vue';
   height: 100vh;
 }
 
-
 #topContent {
   display: flex;
   align-items: flex-start;
@@ -104,11 +95,11 @@ import { onMounted, ref } from 'vue';
 }
 
 #titleText h1 {
-  color: #F0F0F0;
+  color: var(--color-text);
 }
 
 #titleText h5 {
-  color: #F0F0F0;
+  color: var(--color-text);
   font-family: 'Times New Roman', Times, serif;
   font-size: medium;
   margin-top: 10px;
@@ -118,28 +109,6 @@ import { onMounted, ref } from 'vue';
   position: absolute;
   margin-left: 23%;
   width: 50%;
-}
-
-#outerCircle {
-  position: inherit;
-  width: 800px;
-  height: 800px;
-  background: linear-gradient(0.4turn, #B531E2, #33043C 50%);
-  border-radius: 50%;
-  z-index: 0;
-  box-shadow: 0 0px 100px rgb(255, 255, 255);
-}
-
-#innerCircle {
-  position: absolute;
-  width: 640px;
-  height: 640px;
-  background-color: #F0F0F0;
-  border-radius: 50%;
-  justify-self: center;
-  margin-top: 80px;
-  box-shadow: inset 20px 0px 100px #4b125e;
-
 }
 
 #homeMain {
@@ -160,8 +129,8 @@ import { onMounted, ref } from 'vue';
 .bentoBox {
   display: flex;
   flex-direction: column;
-  background-color: black;
-  color: #F0F0F0;
+  background-color: var(--baseColor);
+  color: var(--color-text);
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -181,7 +150,7 @@ import { onMounted, ref } from 'vue';
 
 #designTemplates {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #F0F0F0;
+  color: var(--color-text);
   width: 100%;
   height: 75px;
   margin-top: 30px;
@@ -200,18 +169,6 @@ import { onMounted, ref } from 'vue';
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-top: 15px solid #F0F0F0;
-}
-
-h1 {
-  color: black;
-  font-weight: 350;
-  margin: 0;
-  padding: 0;
-}
-
-#proText {
-  color: black;
-  margin: 25px 0 10px 0;
 }
 
 #rightSection {

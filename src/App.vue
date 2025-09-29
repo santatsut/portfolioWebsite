@@ -21,7 +21,6 @@ import templateComponent from './components/templateComponent.vue';
   flex-direction: row;
   width: 100%;  
 }
-
 #main::before {
   content: "";
   position: fixed;
@@ -37,6 +36,5 @@ import templateComponent from './components/templateComponent.vue';
   background-repeat: no-repeat;
   background-position: center;
 }
-
 
 </style>
