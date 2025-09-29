@@ -62,7 +62,7 @@
     display: flex;
     flex-direction: column;
     position: inherit;
-    color:#F0F0F0;
+    color: var(--color-text);
     text-decoration: none;
     list-style: none;
     text-align: left;
