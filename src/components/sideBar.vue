@@ -9,7 +9,7 @@
             <div id="lowerRectangle">
                 <ul id="routes">
                     <li class="tabs">Home</li>
-                    <li class="tabs">Projects</li>
+                    <li class="tabs">Work</li>
                     <li class="tabs">Contact</li>
                 </ul>
             </div>
@@ -48,7 +48,13 @@
     height: 150px;
     border-radius: 50%;
     margin: 50px;
+    background-image: url('./images/profilePic.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
+
 
 #lowerRectangle {
     display: flex;

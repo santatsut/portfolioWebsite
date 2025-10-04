@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Portfolio Website",
+    "techStack": ["Vue", "Vite", "TailwindCSS"],
+    "description": "A modern portfolio built with Vue and Tailwind.",
+    "image": "./src/components/images/budoclub1.png"
+  },
+  {
+    "title": "Budo Club",
+    "techStack": ["React", "CSS", "Node.js"],
+    "description": "Website for a boxing club, showcasing training schedules and events.",
+    "image": "./src/components/images/budoclub3.png"
+  }
+]

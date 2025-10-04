@@ -13,6 +13,8 @@
 :root {
   --cardWidth: 60vw;
   --cardColor: rgb(15, 15, 19);
+  --cardBackground: rgba(15, 15, 19, 0.8);
+  --cardBorder: rgba(255, 255, 255, 0.8);
 }
 
 body {
