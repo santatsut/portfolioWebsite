@@ -18,6 +18,7 @@ import { onMounted, ref } from 'vue';
               <h5 id="proText">Location: Linköping 📍</h5>
             </div>
             <h1 id="introText">Lets Talk</h1>
+            <h4>Learn more About Me →</h4>
             <!-- <div id="squares4">
               <div class="bentoBox">
                 <h3>ArtStudy</h3>
@@ -48,7 +49,7 @@ import { onMounted, ref } from 'vue';
             <h3>HTML</h3>
           </div>
           <div class="bentoBox" id="skillBox">
-            <img src="../components/images/jsLogo.png" alt="img of html">
+            <img src="../components/images/cssLogo.svg" alt="img of html">
             <h3>CSS</h3>
           </div>
           <div class="bentoBox" id="skillBox">
@@ -126,6 +127,7 @@ import { onMounted, ref } from 'vue';
   font-weight: 300;
   letter-spacing: 0.2rem;
   color: rgb(199, 199, 199);
+
 }
 
 #background {
@@ -147,6 +149,7 @@ import { onMounted, ref } from 'vue';
   max-width: 35vw;
   line-height: 1.2;
   letter-spacing: 1rem;
+  margin-bottom: 0;
 }
 
 .bentoBox {
@@ -205,7 +208,7 @@ import { onMounted, ref } from 'vue';
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   position: relative;
   list-style: none;
-  column-gap: 40px;
+  column-gap: 20px;
   row-gap: 25px;
   width: 30rem;
   height: auto;
@@ -214,7 +217,7 @@ import { onMounted, ref } from 'vue';
 #skillBox {
   gap: 12px;
   position: relative;
-  width: 10vw;
+  width: 11vw;
   height: 8vh;
   margin: 10px 0;
   padding: 10px;

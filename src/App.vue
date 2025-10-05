@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import sideBar from './components/sideBar.vue'
 import HomeView from './views/HomeView.vue';
 import templateComponent from './components/templateComponent.vue';
+import Experience from './components/Experience.vue';
 
 </script>
 
@@ -12,6 +13,7 @@ import templateComponent from './components/templateComponent.vue';
     <HomeView />
   </div>
   <templateComponent class="template-component" />
+  <Experience />
 </template>
 
 <style scoped>
