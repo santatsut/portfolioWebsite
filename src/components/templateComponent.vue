@@ -24,13 +24,6 @@ onMounted(() => {
     firstTemplate.value.style.opacity = progress
     firstTemplate.value.style.transform = `translateY(${(1 - progress) * 50}px)`
     firstTemplate.value.style.transition = 'opacity 0.2s, transform 0.3s'
-    if (progress === 0) {
-      firstTemplate.value.style.position = 'relative'
-    } else {
-      firstTemplate.value.style.position = 'sticky'
-    }
-    console.log(projectList.value[lastItem])
-    
   }
 
   window.addEventListener('scroll', handleScroll)

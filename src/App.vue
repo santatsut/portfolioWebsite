@@ -13,7 +13,7 @@ import Experience from './components/Experience.vue';
     <HomeView />
   </div>
   <templateComponent class="template-component" />
-  <Experience />
+  <Experience />  
 </template>
 
 <style scoped>
