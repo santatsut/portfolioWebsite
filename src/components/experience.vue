@@ -1,37 +1,59 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import experiences from './data/experiences.json'
 
 const experienceInfo = ref(experiences)
-const experienceLine = ref(null)
-const contentRight = ref(null)
+const activeIndex = ref(0)
+
+const handleScroll = () => {
+  const container = document.getElementById('contentRight')
+  if (!container) return
+
+  const children = container.children
+  const windowCenter = (window.innerHeight / 2) - 350
+
+  let closest = 0
+  let smallestDistance = Infinity
+
+  for (let i = 0; i < children.length; i++) {
+    const rect = children[i].getBoundingClientRect()
+    const elementCenter = rect.top + rect.height / 2
+    const distance = Math.abs(windowCenter - elementCenter)
+    if (distance < smallestDistance) {
+      smallestDistance = distance
+      closest = i
+    }
+  }
+
+  activeIndex.value = closest
+}
 
 onMounted(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.intersectionRatio === 1) {
-        contentRight.value.classList.add('active')
-        experienceContainer.value.classList.add('active')
-      } else {
-        contentRight.value.classList.remove('active')
-      }
-    },
-    { threshold: 1.0 }
-  )
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // initial check
+})
 
-  observer.observe(experienceLine.value)
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
 <template>
-  <div id="experienceContainer" ref="experienceContainer">
-    <div class="experienceLine" ref="experienceLine">
+  <div id="experienceContainer">
+    <!-- Vertical timeline -->
+    <div class="experienceLine">
       <div class="line"></div>
     </div>
 
-    <div id="contentRight" ref="contentRight">
+    <!-- Right side content -->
+    <div id="contentRight">
       <h1>Experience</h1>
-      <div v-for="experience in experienceInfo" :key="experience.id" class="experienceItem">
+      <div
+        v-for="(experience, index) in experienceInfo"
+        :key="experience.id"
+        class="experienceItem"
+        :class="{ active: index === activeIndex }"
+      >
         <h2>{{ experience.year }} – {{ experience.role }} at {{ experience.company }}</h2>
         <p>{{ experience.details }}</p>
       </div>
@@ -45,8 +67,7 @@ onMounted(() => {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
-  height: 70vh;
+  align-items: stretch;
   scrollbar-width: none;
   padding-top: 20vh;
 }
@@ -58,12 +79,10 @@ onMounted(() => {
 /* === Sticky vertical timeline === */
 .experienceLine {
   flex: 0.8;
-  position: sticky;
-  top: 10vh;
-  height: 80vh;
+  position: relative;
+  top: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .line {
@@ -101,18 +120,13 @@ onMounted(() => {
   flex: 2;
   color: white;
   padding-left: 5vw;
-  opacity: 0.4;
   pointer-events: none;
-  transform: translateY(4vh);
-  transition: opacity 0.6s ease, transform 0.8s ease;
 }
 
-/* unlock when the line is fully visible */
-#contentRight.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-  overflow-y: auto;
+.experienceItem.active {
+  opacity: 1 !important;
+  transform: scale(1.15);
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 /* Titles and content spacing */
@@ -122,7 +136,9 @@ onMounted(() => {
 }
 
 .experienceItem {
-  margin-bottom: 3rem;
+  margin: 8em 0;
+  width: 70%;
+  opacity: 0.5;
 }
 
 .experienceItem h2 {

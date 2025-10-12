@@ -33,9 +33,8 @@ onMounted(() => {
     window.removeEventListener('scroll', handleScroll)
   })
 })
+
 </script>
-
-
 
 <template>
   <div id="parallaxContainer">
@@ -73,6 +72,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
 #parallaxContainer {
   width: 100%;
   height: 300vh; /* enough height to scroll naturally */
