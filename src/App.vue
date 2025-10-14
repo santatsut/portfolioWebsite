@@ -4,6 +4,7 @@ import sideBar from './components/sideBar.vue'
 import HomeView from './views/HomeView.vue';
 import templateComponent from './components/templateComponent.vue';
 import Experience from './components/Experience.vue';
+import Contact from './components/contact.vue'
 
 </script>
 
@@ -14,6 +15,7 @@ import Experience from './components/Experience.vue';
   </div>
   <templateComponent class="template-component" />
   <Experience />  
+  <Contact />
 </template>
 
 <style scoped>

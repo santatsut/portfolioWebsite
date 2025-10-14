@@ -1,6 +1,4 @@
 <script setup>
-import { onMounted, ref } from 'vue';
-
 </script>
 
 
@@ -19,26 +17,6 @@ import { onMounted, ref } from 'vue';
             </div>
             <h1 id="introText">Lets Talk</h1>
             <h4>Learn more About Me →</h4>
-            <!-- <div id="squares4">
-              <div class="bentoBox">
-                <h3>ArtStudy</h3>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat minus sunt distinctio accusamus explicabo. Sint vel consequuntur fugiat fuga eos.</h5>
-              </div>
-              <div class="bentoBox">
-                <h3>budo club</h3>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat minus sunt distinctio accusamus explicabo. Sint vel consequuntur fugiat fuga eos.</h5>
-              </div>
-              <div class="bentoBox">
-                <h3>Project in progress...</h3>
-              </div>
-              <div class="bentoBox">
-                <h3>Project in progress...</h3>
-              </div>
-              <button class="bentoBox" id="designTemplates">
-                <h3>Website Design Templates</h3>
-                <div id="arrowDown"></div>
-              </button>
-            </div> -->
           </div>
         </div>
 
@@ -57,7 +35,7 @@ import { onMounted, ref } from 'vue';
             <h3>JavaScript</h3>
           </div>
           <div class="bentoBox" id="skillBox">
-            <img src="" alt="img of html">
+            <img src="../components/images/vueLogo.png" alt="img of html">
             <h3>Vue</h3>
           </div>
           <div class="bentoBox" id="skillBox">
@@ -173,29 +151,6 @@ import { onMounted, ref } from 'vue';
   margin: 25px;
 }
 
-/* #designTemplates {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--color-text);
-  width: 100%;
-  height: 75px;
-  margin-top: 30px;
-  border: none;
-  font-size: 20px;
-  letter-spacing: 0.3cap;
-  font-weight: 300;
-  padding: 10px;
-  grid-column: 1 / -1;
-} 
-  
-#arrowDown {
-  margin-top: 10px;
-  width: 0; 
-  height: 0; 
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 15px solid #F0F0F0;
-} */
-
 #rightSection {
   display: flex;
   flex-direction: column;
@@ -235,28 +190,6 @@ import { onMounted, ref } from 'vue';
   border-radius: 8px;
   margin-left: 5px;
 }
-
-/* #skillBox h3 {
-  margin: 25px;
-  font-weight: 400;
-  text-decoration: underline;
-}
-
-.skillsList {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  grid-gap: 25px;
-  font-weight: 300;
-  font-size: 16px;
-  list-style-type: none;
-  text-align: left;
-  padding: 0;
-  margin: 0;
-}
-
-#skillsList li {
-  text-align: left;
-} */
 
 #shortText {
   position: relative;

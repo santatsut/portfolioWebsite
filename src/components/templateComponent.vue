@@ -38,22 +38,6 @@ onMounted(() => {
 
 <template>
   <div id="parallaxContainer">
-    <div class="templateBox" id="firstTemplate" ref="firstTemplate">
-        <div class="card">
-          <div class="leftSide">
-            <h4>Seren Shop</h4>
-            <ul class="techStack">
-              <li>React</li>
-              <li>CSS</li>
-              <li>Node js</li>
-            </ul>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ea!</p>
-          </div>
-          <div class="rightSide">
-            <img src="../components/images/serenShop.png" alt="">
-          </div>
-      </div>
-    </div>
     <div class="templateBox" v-for="(project, index) in projectList" :key="index">
       <div class="card">
         <div class="leftSide">
@@ -75,7 +59,7 @@ onMounted(() => {
 
 #parallaxContainer {
   width: 100%;
-  height: 300vh; /* enough height to scroll naturally */
+  height: max-content; /* enough height to scroll naturally */
   padding-top: 200px;
 }
 

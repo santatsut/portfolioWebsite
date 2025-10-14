@@ -1,14 +1,50 @@
 [
   {
-    "title": "Portfolio Website",
-    "techStack": ["Vue", "Vite", "TailwindCSS"],
-    "description": "A modern portfolio built with Vue and Tailwind.",
-    "image": "./src/components/images/budoclub1.png"
+    "title": "UF-Företag (Student-run enterprise)",
+    "techStack": ["PHP", "HTML", "CSS", "Github"],
+    "description": "Website for a student-run enterprise, showcasing jobb applications.",
+    "image": "./src/components/images/UF-företag.jpg"
   },
   {
-    "title": "Budo Club",
-    "techStack": ["React", "CSS", "Node.js"],
-    "description": "Website for a boxing club, showcasing training schedules and events.",
-    "image": "./src/components/images/budoclub3.png"
+    "title": "Seren Shop",
+    "techStack": ["Vite", "React", "CSS", "MySQL", "NodeJS", "Github"],
+    "description": "A quick mock up of a hypothetical coffe shop",
+    "image": "./src/components/images/serenShop.png"
+  },
+  {
+    "title": "PoängJakt",
+    "techStack": ["PHP", "CSS", "Javascript", "Github"],
+    "description": "A Website for a competion in my school, for the last year students, which I did with a friend of mine. I mainly focused on the frontend while he did the backen.",
+    "image": "./src/components/images/Poangjakt.jpg"
+  },
+  {
+    "title": "Chat Rooms",
+    "techStack": ["Firebase", "CSS", "Javascript", "Github"],
+    "description": "Website for my school which helped the first year students get more social with eachother at first, using chat rooms.",
+    "image": "./src/components/images/chatRooms.png"
+  },
+  {
+    "title": "Ambassador Website for LBS",
+    "techStack": ["PHP", "CSS", "Github"],
+    "description": "A website for my school which was for ambassadors, and a competition for our school.",
+    "image": "./src/components/images/Ambassador.jpg"
+  },
+  {
+    "title": "Coffe Shop Template",
+    "techStack": ["Figma"],
+    "description": "A quick mock up of a hypothetical coffe shop",
+    "image": "./src/components/images/coffeShop.png"
+  },
+  {
+    "title": "Task Board",
+    "techStack": ["HTML", "CSS", "Javascript"],
+    "description": "A quick project of creating a task board.",
+    "image": "./src/components/images/TaskBoard.png"
+  },
+  {
+    "title": "Art Showcase",
+    "techStack": ["Javascript", "HTML", "CSS", "Github"],
+    "description": "A old website where I showcase art and logos I used to make",
+    "image": "./src/components/images/artStudy.png"
   }
 ]
