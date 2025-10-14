@@ -57,6 +57,7 @@
         </div>
           <div class="bentoBox" id="shortText">
             <h3>Web Developer</h3>
+            
             <p>Web developer with a passion for creating dynamic and responsive websites. Skilled in HTML, CSS, and JavaScript, with a focus on user experience and accessibility. Eager to contribute to innovative projects and collaborate with teams to deliver high-quality web solutions.</p>
           </div>
         </div>
