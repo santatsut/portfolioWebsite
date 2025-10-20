@@ -35,39 +35,61 @@ export default {
 </script>
 
 <template>
-  <form @submit.prevent="sendEmail" class="contact-form">
-    <input
-      type="email"
-      v-model="email"
-      placeholder="Your Email"
-      required
-      class="form-input"
-    />
-    <textarea
-      v-model="message"
-      placeholder="Your Message"
-      required
-      class="form-textarea"
-    ></textarea>
-    <button type="submit" class="form-button">Send Message</button>
-
-    <p v-if="status" class="form-status">{{ status }}</p>
-  </form>
+  <div id="contactSection">
+    <form @submit.prevent="sendEmail" class="contact-form" :method="POST">
+      <h1>Contact Me</h1>
+      <input
+        type="email"
+        v-model="email"
+        placeholder="Your Email"
+        required
+        class="form-input"
+      />
+      <textarea
+        v-model="message"
+        placeholder="Your Message"
+        required
+        class="form-textarea"
+      ></textarea>
+      <button type="submit" class="form-button">Send Message</button>
+      <p v-if="status" class="form-status">{{ status }}</p>
+    </form>
+  </div>
 </template>
 
 <style scoped>
+#contactSection {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  width: 40vw;
   margin: auto;
+  align-items: center;
 }
+
+.contact-form h1 {
+  margin-bottom: 10vh;
+  font-family: var(--MainFont);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 3em;
+}
+
 .form-input,
 .form-textarea {
   margin-bottom: 1rem;
   padding: 0.75rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  width: 30vw;
 }
 .form-button {
   background-color: black;
