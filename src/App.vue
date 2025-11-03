@@ -15,7 +15,7 @@ import Contact from './components/contact.vue'
   </div>
   <templateComponent class="template-component" />
   <Experience />  
-  <Contact />
+  <Contact v-bind="isCommenting"/>
 </template>
 
 <style scoped>
