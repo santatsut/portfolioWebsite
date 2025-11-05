@@ -40,11 +40,5 @@
     "techStack": ["HTML", "CSS", "Javascript"],
     "description": "A quick project of creating a task board.",
     "image": "./src/components/images/TaskBoard.png"
-  },
-  {
-    "title": "Art Showcase",
-    "techStack": ["Javascript", "HTML", "CSS", "Github"],
-    "description": "A old website where I showcase art and logos I used to make",
-    "image": "./src/components/images/artStudy.png"
   }
 ]

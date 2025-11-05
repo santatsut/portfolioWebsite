@@ -81,11 +81,12 @@ export default {
 <template>
 
   <div id="contactSection">
+  <div id="main">
     <div id="tabSection">
       <button @click="isCommenting = false" :class="[!isCommenting ? 'activeButton' : 'nonActiveButton', 'tabs']">Contact Me</button>
       <button @click="isCommenting = true" :class="[isCommenting ? 'activeButton' : 'nonActiveButton', 'tabs']">Comment</button>
     </div>
-    <form @submit.prevent="addComment" v-if="isCommenting">
+    <form @submit.prevent="addComment" v-if="isCommenting" class="contact-form">
       <h1>Comment</h1>
       <input 
       type="text"
@@ -101,7 +102,15 @@ export default {
       class="form-textarea"
       ></textarea>
       <button type="submit" class="form-button">Add Comment</button>
+      
     </form>
+    <h2 v-if="isCommenting">Comments</h2>
+    <ul v-if="isCommenting" id="commentsList">
+    <li v-for="(c, i) in comments" :key="i" class="commentItem">
+      <strong id="username">{{ c.name }}:</strong> 
+      <p>{{ c.comment }}</p>
+    </li>
+  </ul>
     <form @submit.prevent="sendEmail" class="contact-form" v-if="!isCommenting">
       <h1>Contact Me</h1>
       <input
@@ -120,11 +129,7 @@ export default {
       <button type="submit" class="form-button">Send Message</button>
       <p v-if="status" class="form-status">{{ status }}</p>
     </form>
-    <ul v-if="isCommenting">
-      <li v-for="(c, i) in comments" :key="i">
-        <strong>{{ c.name }}:</strong> {{ c.comment }}
-      </li>
-    </ul>
+  </div>
   </div>
 </template>
 
@@ -134,11 +139,18 @@ export default {
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+#main {
+  margin: auto;
+  height: max-content;
+  width: 60vw;
 }
 
 #tabSection {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center; 
 }
@@ -146,18 +158,29 @@ export default {
 .tabs {
   border: none;
   outline: none;
+  font-size: 1.5rem;
+  color: white;
+  padding: 10px 20px;
+  background-color: transparent;
+  box-shadow: 0 5px 0 0  rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .activeButton {
-  background-color: red;
+  background-color: rgba(173, 173, 173, 0.4);
 }
 
 .contact-form {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 40vw;
   margin: auto;
   align-items: center;
+  padding: 10vh 0;
 }
 
 .contact-form h1 {
@@ -195,5 +218,32 @@ export default {
 .form-status {
   margin-top: 0.5rem;
   text-align: center;
+}
+
+#username {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+#commentsList {
+  position: relative;
+  padding: 0;
+  padding: 10px 10px;
+  margin-bottom: 10vh;
+}
+
+#commentsList h2 {
+  color: white;
+  text-align: center;
+}
+
+.commentItem {
+  margin: 10px 25px;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.commentItem p {
+  margin: 5px 0 15px 25px;
 }
 </style>

@@ -45,7 +45,7 @@ onMounted(() => {
           <ul class="techStack">
             <li v-for="(tech, i) in project.techStack" :key="i">{{ tech }}</li>
           </ul>
-          <p>{{ project.description }}</p>
+          <p id="description">{{ project.description }}</p>
         </div>
         <div class="rightSide">
           <img :src="project.image" :alt="project.title" />
@@ -68,22 +68,20 @@ onMounted(() => {
   top: 10vh;
   width: 100%;
   z-index: 1;
-  margin-bottom: 50px; /* spacing between sections */
 }
 
 .card {
   width: 70vw;
   height: 60vh;
   margin: 50px auto;
-  background-color: var(--cardBackground);
-  border: 1px solid var(--cardBorder);
+  background-color: black;
+  box-shadow: 0 0px 0px 10px rgba(255, 255, 255, 0.3);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  border-radius: 16px;
-  padding: 25px;
+  padding: 0 25px;
 }
 
 .leftSide {
@@ -116,12 +114,18 @@ onMounted(() => {
   transition: all 0.3s ease;
 }
 
+#description {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
 .rightSide {
   flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 90%;
   width: 100%;
 }
 
