@@ -70,6 +70,7 @@ onUnmounted(() => {
   align-items: stretch;
   scrollbar-width: none;
   padding-top: 20vh;
+  margin-bottom: 15vh;
 }
 
 #experienceContainer::-webkit-scrollbar {

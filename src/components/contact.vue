@@ -4,7 +4,7 @@ import {
   getFirestore, collection, addDoc, onSnapshot, serverTimestamp 
 } from "firebase/firestore";
 import { app } from "./firebase.js";
-import { ref } from "vue";
+import { nextTick } from "vue";
 
 const db = getFirestore(app);
 
@@ -25,7 +25,29 @@ export default {
       isCommenting: null,
     };
   },
+watch: {
+  async isCommenting(newValue, oldValue) {
+    console.log("isCommenting changed:", oldValue, "→", newValue);
+    if (newValue === true) {
+      // Wait until comments are rendered
+      await nextTick();
 
+      // Find the comments section
+      const commentsSection = document.getElementById("commentsList");
+      if (commentsSection) {
+        // Get its position relative to the page
+        const rect = commentsSection.getBoundingClientRect();
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Scroll so the top of comments appears nicely on screen
+        window.scrollTo({
+          top: scrollTop + rect.top - 100, // offset by 100px for better visibility
+          behavior: "smooth",
+        });
+      }
+    }
+  },
+},
  mounted() {
     const commentsCol = collection(db, "comments");
     onSnapshot(commentsCol, (snapshot) => {
